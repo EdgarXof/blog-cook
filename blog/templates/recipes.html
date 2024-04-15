@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/blog.css'%}">
+</head>
+<body>
+<div class="header">
+    <h1>Recipes withut O</h1>
+    <p>A website made for people who are starving but can't get water.
+        All the recipes can be made without water </p>
+</div>
+<div>
+    <h3>Recipes List</h3>
+    <ul>
+        {% for recipe in recipes %}
+        <li>
+            <a href="{{ recipe.id }}">{{ recipe.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>

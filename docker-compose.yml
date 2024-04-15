@@ -17,7 +17,8 @@ services:
   backend:
     build:
       context: .
-    command: sh -c 'while true; do ./manage.py runserver 0.0.0.0:8000; sleep 1; done'
+    command: sh -c 'while true; do /venv/bin/python ./manage.py runserver 0.0.0.0:8000; sleep 1; done'
+    #command: sleep infinity
     environment:
       <<: *x-environment
       ALLOWED_HOSTS: >-
@@ -36,3 +37,4 @@ services:
 volumes:
   pgdata:
   venv:
+  home:
