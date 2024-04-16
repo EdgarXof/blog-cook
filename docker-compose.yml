@@ -14,6 +14,13 @@ services:
     ports:
       - 5432
 
+#  frontend:
+#    build:
+#      context: .
+#    command: /venv/bin/python manage.py tailwind start
+#    depends_on:
+#      - backend
+
   backend:
     build:
       context: .

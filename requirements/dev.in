@@ -4,3 +4,4 @@ pytz
 psycopg2-binary
 pip-tools
 django-debug-toolbar
+django-tailwind
