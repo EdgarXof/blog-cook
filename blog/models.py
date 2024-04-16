@@ -15,6 +15,9 @@ class Recipe(models.Model):
         return self.title
 
     title = models.CharField(max_length=200)
+    # FIXME: You need to run once:
+    #  - python ./manage.py makemigrations
+    #  - python ./manage.py migrate
     image = models.ImageField(blank=True, null=True)
     description = models.TextField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
