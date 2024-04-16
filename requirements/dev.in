@@ -3,3 +3,4 @@ dj-database-url
 pytz
 psycopg2-binary
 pip-tools
+django-debug-toolbar

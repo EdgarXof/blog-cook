@@ -1,0 +1,45 @@
+.header {
+  padding: 60px;
+  text-align: start;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+  margin: -10px;
+}
+
+.recipe-title{
+  text-transform: capitalize;
+}
+
+.button{
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  border-radius: 500px;
+  transition-property: background-color,border-color,color,box-shadow,filter;
+  transition-duration: .3s;
+  border: 1px solid transparent;
+  letter-spacing: 2px;
+  min-width: 160px;
+  text-transform: uppercase;
+  white-space: normal;
+  font-weight: 700;
+  text-align: center;
+  padding: 17px 48px;
+  color: #1abc9c;
+  background-color: #fff;
+  height: 48px;
+}
+
+.button:hover{
+  transform: scale(1.04);
+  background-color: #e5e5e5;
+}
+
+.content-detail{
+  margin: 50px;
+  padding-top: 50px;
+}
+

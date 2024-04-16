@@ -1,12 +1,22 @@
+{% load static tailwind_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% tailwind_css %}
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{{ recipe.title }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>{{ recipe.title }}</h1>
-    <h2>{{ recipe.category.name }}</h2>
-    <p>Recipe description:{{ recipe.description }}</p>
+<div class="header">
+<button class="button" type="button" onclick="history.back()">Home</button>
+</div>
+<div class="content-detail">
+    <h1 class="recipe-title">{{ recipe.title }}</h1>
+    <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}">
+    <p><b>Category : </b> {{ recipe.category.name }}</p>
+    <p><b>Recipe description :</b> {{ recipe.description }}</p>
+</div>
 </body>
 </html>

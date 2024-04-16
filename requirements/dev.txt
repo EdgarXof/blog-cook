@@ -34,7 +34,7 @@ typing-extensions==4.11.0
     # via dj-database-url
 wheel==0.43.0
     # via pip-tools
-
+django-debug-toolbar==4.3.0
 # The following packages are considered to be unsafe in a requirements file:
 # pip
 # setuptools

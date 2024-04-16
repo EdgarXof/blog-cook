@@ -8,6 +8,11 @@ RUN set -x; \
         gettext \
     && rm -rf /var/lib/apt/lists/*
 
+# Install Node.js
+RUN apt-get update && apt-get install -y curl
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
+RUN apt-get install -y nodejs
+
 ARG USER_ID=1000
 ARG GROUP_ID=1000
 

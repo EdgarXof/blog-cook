@@ -1,27 +1,46 @@
+{% load static tailwind_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Blog</title>
-
+    {% tailwind_css %}
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/blog.css'%}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-<div class="header">
-    <h1>Recipes withut O</h1>
-    <p>A website made for people who are starving but can't get water.
-        All the recipes can be made without water </p>
+<div class="bg-emerald-500 max-w max-h">
+    <h1 class="text-4xl font-extrabold text-white pt-4 pl-4 pb-4">Recipes Blog</h1>
+
 </div>
-<div>
-    <h3>Recipes List</h3>
-    <ul>
+
+<p class="pl-4 pt-4 text-2xl">Website for people who like to cook and talk about it.</p>
+
+<div class="divider pt-4 pb-4"></div>
+<div class="pt-4">
+    <h3 class="text-3xl font-bold pt-4 pb-4 pl-4">Recipes</h3>
+
+        <div class="h-full bg-red grid grid-cols-3 gap-8 pt-4 pl-4 pr-4  ">
         {% for recipe in recipes %}
-        <li>
-            <a href="{{ recipe.id }}">{{ recipe.title }}</a>
-        </li>
-        {% endfor %}
-    </ul>
+            <a href="{{ recipe.id }}" class="block">
+                <div class="content-start container h-full relative flex max-w-full flex-col justify-start overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+                  <div class="relative m-0 overflow-hidden text-gray-700 bg-transparent rounded-none shadow-none bg-clip-border">
+                    <img class="h-56 w-full object-cover" src="{{ recipe.image.url }}"
+                      alt="{{ recipe.title }}" />
+                  </div>
+                    <div class="p-6">
+                        <h3 class="capitalize block font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+                      {{ recipe.title }}
+                        </h3>
+                        <p class=" block mt-3 font-sans text-xl antialiased font-normal leading-relaxed text-gray-700">
+                            {{ recipe.description }}
+                        </p>
+                    </div>
+                </div>
+            </a>
+    {% endfor %}
+
+        </div>
 </div>
 </body>
 </html>
