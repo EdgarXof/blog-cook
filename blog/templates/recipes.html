@@ -1,19 +1,8 @@
-{% load static tailwind_tags %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Blog</title>
-    {% tailwind_css %}
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-<div class="bg-emerald-500 max-w max-h">
-    <h1 class="text-4xl font-extrabold text-white pt-4 pl-4 pb-4">Recipes Blog</h1>
-
-</div>
-
+{% extends 'base.html' %}
+    {% block title %}
+    	Blog
+    {% endblock %}<title>Blog</title>
+{% block content %}
 <p class="pl-4 pt-4 text-2xl">Website for people who like to cook and talk about it.</p>
 
 <div class="divider pt-4 pb-4"></div>
@@ -65,5 +54,4 @@
 
         </div>
 </div>
-</body>
-</html>
+{% endblock %}

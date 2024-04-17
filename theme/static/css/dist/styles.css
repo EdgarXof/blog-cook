@@ -852,6 +852,10 @@ select {
   height: 100vh;
 }
 
+.w-16 {
+  width: 4rem;
+}
+
 .w-full {
   width: 100%;
 }
