@@ -43,3 +43,6 @@
   padding-top: 50px;
 }
 
+.recipe-card{
+  @apply content-start container h-full relative flex max-w-full flex-col justify-start overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700
+}
