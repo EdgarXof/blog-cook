@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse
 
 from blog.models import Recipe
+from django.http import Http404
 
 
 def index(request):
@@ -14,5 +15,8 @@ def detail(request, recipe_id):
     #  - Test if the recipe exists
     #    - if yes, retrieve it
     #    - if no, raise an Http404 error
-    recipe_object = Recipe.objects.get(pk=recipe_id)
+    try:
+        recipe_object = Recipe.objects.get(pk=recipe_id)
+    except Recipe.DoesNotExist:
+        raise Http404("Recipe does not exist")
     return render(request, "recipes-detail.html", {"recipe": recipe_object})
