@@ -17,32 +17,32 @@
 <p class="pl-4 pt-4 text-2xl">Website for people who like to cook and talk about it.</p>
 
 <div class="divider pt-4 pb-4"></div>
-<div class="pt-4">
-<form method="get" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-    {% for field in filter_recipe.form %}
-        <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2">
-                {{ field.label }}
-            </label>
-            {% for choice in field %}
-                <div class="flex items-center mb-2">
-                    {{ choice.tag }}  <!-- This will render the checkbox input -->
-                    <label class="ml-2 text-gray-700">
-                        {{ choice.choice_label }} <!-- This will render the label next to the checkbox -->
-                    </label>
-                </div>
-            {% endfor %}
-        </div>
-    {% endfor %}
-    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        Filter
-    </button>
-</form>
+<div class="pt-4 pb-4">
+    <form method="get" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        {% for field in filter_recipe.form %}
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2">
+                    {{ field.label }}
+                </label>
+                {% for choice in field %}
+                    <div class="flex items-center mb-2">
+                        {{ choice.tag }}  <!-- This will render the checkbox input -->
+                        <label class="ml-2 text-gray-700">
+                            {{ choice.choice_label }} <!-- This will render the label next to the checkbox -->
+                        </label>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Filter
+        </button>
+    </form>
     <h3 class="text-3xl font-bold pt-4 pb-4 pl-4">Recipes</h3>
 
         <div class="h-full bg-red grid grid-cols-3 gap-8 pt-4 pl-4 pr-4  ">
         {% for recipe in recipes %}
-            <a href="{{ recipe.id }}" class="recipe-card shadow-md">
+            <a href="{{ recipe.id }}" class="recipe-card ">
                   <div class="relative m-0 overflow-hidden text-gray-700 bg-transparent rounded-none shadow-none bg-clip-border">
                     <img class="h-56 w-full object-cover" src="{{ recipe.image.url }}"
                       alt="{{ recipe.title }}" />

@@ -38,11 +38,13 @@
   background-color: #e5e5e5;
 }
 
-.content-detail{
-  margin: 50px;
-  padding-top: 50px;
-}
+
 
 .recipe-card{
   @apply content-start container h-full relative flex max-w-full flex-col justify-start overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700
+  shadow-md
+}
+.recipe-card:hover{
+  @apply
+  scale-105 transition-transform duration-300 ease-in-out shadow-lg
 }
