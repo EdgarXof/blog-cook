@@ -3,7 +3,7 @@
     	Blog
     {% endblock %}<title>Blog</title>
 {% block content %}
-<p class="pl-4 pt-4 text-2xl">Website for people who like to cook and talk about it.</p>
+<p class="pl-4 pt-4 text-2xl">Website for people who like to cook .</p>
 
 <div class="divider pt-4 pb-4"></div>
 <div class="pt-4 pb-4">
@@ -11,12 +11,12 @@
         {% for field in filter_recipe.form %}
             <div class="mb-4 flex flex-wrap items-center justify-between"> <!-- Flex container for the entire field, including the button -->
                 <div>
-                    <label class="block text-gray-700 text-sm font-bold mb-2">
+                    <label class="block text-gray-700 text-2xl font-bold mb-2">
                         {{ field.label }}
                     </label>
                     <div class="flex items-center flex-wrap"> <!-- Flex container for choices -->
                         {% for choice in field %}
-                            <div id="input" class="flex items-center mr-4 mb-2"> <!-- Flex item for each choice -->
+                            <div id="input" class="flex items-center mr-4 mb-2 "> <!-- Flex item for each choice -->
                                 {{ choice.tag }}  <!-- This will render the checkbox input -->
                                 <label class="ml-2 text-gray-700" for="input">
                                     {{ choice.choice_label }} <!-- This will render the label next to the checkbox -->
@@ -32,7 +32,7 @@
         {% endfor %}
     </form>
 
-    <h3 class="text-3xl font-bold pt-4 pb-4 pl-4">Recipes</h3>
+    <h3 class="text-3xl font-bold pt-4 pb-4 pl-6">Recipes</h3>
 
         <div class="h-full bg-red grid grid-cols-3 gap-8 pt-4 pl-4 pr-4  ">
         {% for recipe in recipes %}
