@@ -3,9 +3,8 @@
     {{ recipe }}
     {% endblock %}
 {% block content %}
-<div class="header">
-    <a class="button" href={% url 'index' %}>Home</a>
-</div>
+
+    <a class="button pt-8 m-4 shadow-md" href={% url 'index' %}>Home</a>
 
 <div class="max-w-2xl mx-auto p-5 bg-white shadow-md justify-center items-center">
     <h1 class="text-3xl font-bold text-gray-900">{{ recipe.title }}</h1>
@@ -23,13 +22,24 @@
     <ul id="ingredient-list">
         {% for ingredient in recipe.ingredients.all %}
         <li data-base-quantity="{{ ingredient.quantity }}">
-            <span class="quantity">{{ ingredient.quantity }}*2</span>
+            <span class="quantity">{{ ingredient.quantity }}</span>
             <b>{{ ingredient.unit }}</b> {{ ingredient.label }}
         </li>
         {% endfor %}
     </ul>
 
 </div>
+<script>
+document.getElementById('multiplier').addEventListener('input', function() {
+    var multiplier = parseFloat(this.value);
+    var ingredientItems = document.querySelectorAll('#ingredient-list li');
 
+    ingredientItems.forEach(function(item) {
+        var baseQuantity = parseFloat(item.getAttribute('data-base-quantity'));
+        var newQuantity = baseQuantity * multiplier;
+        item.querySelector('.quantity').textContent = newQuantity.toFixed(2); // Formats to 2 decimal places
+    });
+});
+</script>
 
 {% endblock %}

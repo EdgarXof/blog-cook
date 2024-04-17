@@ -10,3 +10,8 @@
   @apply
   scale-105 transition-transform duration-300 ease-in-out shadow-lg
 }
+
+.button:hover{
+  @apply
+  scale-105 transition-transform duration-300 ease-in-out shadow-lg
+}
