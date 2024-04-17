@@ -5,3 +5,6 @@ psycopg2-binary
 pip-tools
 django-debug-toolbar
 django-tailwind
+django_browser_reload
+pillow
+theme
