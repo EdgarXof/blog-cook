@@ -2,11 +2,15 @@ from django.shortcuts import render, HttpResponse
 
 from blog.models import Recipe
 from django.http import Http404
+from .forms import RecipeFilter
 
 
 def index(request):
-    items = Recipe.objects.all()
-    return render(request, "recipes.html", {"recipes": items})
+    filter_recipe = RecipeFilter(request.GET, queryset=Recipe.objects.all())
+
+    recipes = filter_recipe.qs
+
+    return render(request, "recipes.html", {"recipes": recipes, "filter_recipe": filter_recipe})
 
 
 def detail(request, recipe_id):
