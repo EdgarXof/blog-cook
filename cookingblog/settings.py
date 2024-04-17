@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'debug_toolbar',
     'tailwind',
+    # FIXME: Add these packages to the requirements for a proper installation
     'theme',
     'django_browser_reload',
 ]

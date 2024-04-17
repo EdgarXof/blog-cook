@@ -22,6 +22,14 @@
 
         <div class="h-full bg-red grid grid-cols-3 gap-8 pt-4 pl-4 pr-4  ">
         {% for recipe in recipes %}
+
+            {% comment %}
+            FIXME:
+                Merge the 2 nexts tags: 'a' and 'div', into one 'a' tag.
+                <a href="{{ recipe.id }}" class="recipe-card">
+                In style.css set .recipe-card with @apply block content-start container ... (all the card's classes that you are using)
+            {% endcomment %}
+
             <a href="{{ recipe.id }}" class="block">
                 <div class="content-start container h-full relative flex max-w-full flex-col justify-start overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
                   <div class="relative m-0 overflow-hidden text-gray-700 bg-transparent rounded-none shadow-none bg-clip-border">
