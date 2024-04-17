@@ -3,8 +3,8 @@
     {{ recipe }}
     {% endblock %}
 {% block content %}
-
-    <a class="button pt-8 m-4 shadow-md" href={% url 'index' %}>Home</a>
+    <div class="flex flex-col items-center">
+    <a class="max-w-2xl w-full button pt-8 m-4 shadow-md text-center" href={% url 'index' %}>Home</a>
 
 <div class="max-w-2xl mx-auto p-5 bg-white shadow-lg justify-center items-center">
     <h1 class="text-3xl font-bold text-gray-900 capitalize">{{ recipe.title }}</h1>
@@ -29,7 +29,12 @@
     </ul>
 
 </div>
-<script>
+</div>
+
+{% endblock %}
+
+ {% block script %}
+    <script>
 document.getElementById('multiplier').addEventListener('input', function() {
     var multiplier = parseFloat(this.value);
     var ingredientItems = document.querySelectorAll('#ingredient-list li');
@@ -41,5 +46,4 @@ document.getElementById('multiplier').addEventListener('input', function() {
     });
 });
 </script>
-
 {% endblock %}
